@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nick (darkangelspac) — Minecraft Plugin Developer</title>
+  <meta name="description" content="Portfolio programisty pluginów Minecraft: pluginy Paper/Spigot, mody Fabric i serwery, z którymi współpracowałem.">
+  <meta name="theme-color" content="#140f1f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23140f1f'/><rect x='2' y='2' width='12' height='12' fill='%239b6dff'/><rect x='2' y='2' width='12' height='3' fill='%23c4a6ff'/><rect x='10' y='5' width='4' height='9' fill='%236d48c2'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <canvas id="sparks" aria-hidden="true"></canvas>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Strona główna">
+      <span class="brand-block" aria-hidden="true"></span>
+      <span id="brandName">Nick</span>
+    </a>
+    <nav aria-label="Główna nawigacja">
+      <a href="#pluginy">Pluginy</a>
+      <a href="#serwery">Serwery</a>
+      <a href="#technologie">Technologie</a>
+      <a href="#kontakt" class="nav-cta">Kontakt</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-role">Programista pluginów Minecraft</p>
+        <h1 id="heroTitle" aria-label="Piszę pluginy, które gracze zapamiętają.">Piszę pluginy, które gracze zapamiętają.</h1>
+        <p class="hero-sub" id="heroSub"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pluginy">Zobacz pluginy</a>
+          <button class="btn btn-ghost" id="copyDiscordHero" type="button">
+            <span data-label>Discord: darkangelspac</span>
+          </button>
+        </div>
+        <div class="terminal" role="img" aria-label="Animowana konsola serwera Minecraft">
+          <div class="terminal-bar"><span></span><span></span><span></span><b>console</b></div>
+          <pre id="console"></pre>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="scene" id="scene">
+          <div class="orbit">
+            <div class="cube-pos" style="--x:0px;--y:0px;--z:0px;--s:132px;--d:0s">
+              <div class="cube"><i class="f front"></i><i class="f back"></i><i class="f right"></i><i class="f left"></i><i class="f top"></i><i class="f bottom"></i></div>
+            </div>
+            <div class="cube-pos" style="--x:150px;--y:-110px;--z:-40px;--s:54px;--d:-1.4s">
+              <div class="cube"><i class="f front"></i><i class="f back"></i><i class="f right"></i><i class="f left"></i><i class="f top"></i><i class="f bottom"></i></div>
+            </div>
+            <div class="cube-pos" style="--x:-140px;--y:95px;--z:60px;--s:44px;--d:-2.6s">
+              <div class="cube"><i class="f front"></i><i class="f back"></i><i class="f right"></i><i class="f left"></i><i class="f top"></i><i class="f bottom"></i></div>
+            </div>
+            <div class="cube-pos" style="--x:-95px;--y:-130px;--z:-70px;--s:30px;--d:-3.3s">
+              <div class="cube"><i class="f front"></i><i class="f back"></i><i class="f right"></i><i class="f left"></i><i class="f top"></i><i class="f bottom"></i></div>
+            </div>
+            <div class="cube-pos" style="--x:130px;--y:120px;--z:30px;--s:26px;--d:-4.1s">
+              <div class="cube"><i class="f front"></i><i class="f back"></i><i class="f right"></i><i class="f left"></i><i class="f top"></i><i class="f bottom"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="floor-glow"></div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" id="stats" aria-label="Statystyki"></section>
+
+    <!-- PLUGINS -->
+    <section class="section" id="pluginy">
+      <div class="section-head reveal">
+        <h2>Pluginy i mody</h2>
+        <p>Wybrane projekty. Kliknij kartę, żeby zobaczyć szczegóły.</p>
+      </div>
+      <div class="filters reveal" id="filters" role="group" aria-label="Filtruj projekty"></div>
+      <div class="grid" id="pluginGrid"></div>
+    </section>
+
+    <!-- SERVERS -->
+    <section class="section" id="serwery">
+      <div class="section-head reveal">
+        <h2>Serwery, z którymi pracowałem</h2>
+        <p>Projekty realizowane dla sieci i serwerów społeczności.</p>
+      </div>
+      <div class="servers" id="serverList"></div>
+    </section>
+
+    <!-- TECH -->
+    <section class="section tech" id="technologie">
+      <div class="section-head reveal">
+        <h2>Technologie</h2>
+        <p>Narzędzia, których używam na co dzień.</p>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marqueeA"></div>
+        <div class="marquee-track" id="marqueeB"></div>
+      </div>
+      <ul class="sr-only" id="techSr"></ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="kontakt">
+      <div class="contact-card reveal">
+        <div class="contact-glint" aria-hidden="true"></div>
+        <h2>Potrzebujesz plugina na swój serwer?</h2>
+        <p>Opisz pomysł, a wrócę z wyceną i terminem. Najszybciej odpowiadam na Discordzie.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="copyDiscord" type="button"><span data-label>Skopiuj Discord: darkangelspac</span></button>
+          <a class="btn btn-ghost" id="githubLink" href="https://github.com/" target="_blank" rel="noopener">Profil na GitHubie</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footerText"></p>
+    <p class="disclaimer">Strona nie jest oficjalnym produktem Minecraft i nie jest powiązana z Mojang AB ani Microsoft.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
