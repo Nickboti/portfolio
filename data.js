@@ -32,9 +32,9 @@ const PLUGINS = [
     type: "Plugin",
     status: "live",
     hue: 275,
-    desc: "Plugin eventowy Metin dla serwera boxpvp: wszystko od pojawienia się po nagrody dla graczy.",
+    desc: "Event Metin.",
     features: [
-      "Beacon jako cel eventu z pulsującymi efektami",
+      "Beacon nadający losowe efekty np. Odepchnięcie czy oślepienie",
       "Konfigurowalne nagrody i ich szanse",
       "Zoptymalizowany pod Paper 1.20.4"
     ],
