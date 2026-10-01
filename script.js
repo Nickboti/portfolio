@@ -23,7 +23,7 @@
   $("#brandName").textContent = SITE.name;
   $("#heroSub").textContent = SITE.subtitle;
   $("#githubLink").href = SITE.github;
-  $("#footerText").textContent = `© ${new Date().getFullYear()} ${SITE.name} (${SITE.handle}). Wszystkie prawa zastrzeżone.`;
+  $("#footerText").textContent = `${new Date().getFullYear()} ${SITE.name} (${SITE.handle}). Wszystkie prawa zastrzeżone.`;
   $$("[data-label]").forEach(el => {
     el.textContent = el.closest("#copyDiscord") ? `Skopiuj Discord: ${SITE.discord}` : `Discord: ${SITE.discord}`;
   });
